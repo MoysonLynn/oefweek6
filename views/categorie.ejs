@@ -1,0 +1,29 @@
+<% include header %>
+
+<h3><a href="/">Terug naar de homepage</a></h3>
+<nav>
+  <% for (var i = 0; i < categorieen.length; i++) { %>
+    <div class="kader">  <a href="/categorieen/<%- i %>"><%- categorieen[i] %></a>  </div>
+  <% } %>
+</nav>
+<h2> Lees meer over de <%- categorieen[id] %></h2>
+
+
+  <% for (var i = 0; i < items.length; i++) { %>
+    <% if (items[i].categorieen.indexOf(categorieen[id]) !== -1) { %>
+      <section>
+          <h2>
+            <a class="titelh2"href=/items/<%- items[i].id %>><%- items[i].titel %></a>
+          </h2>
+          <img src="/img/<%- items[i].afbeeldings %>" alt="<%- items[i].titel %>">
+          <p><%- items[i].datum %></p>
+
+          <p>
+            <%- items[i].samenvatting %>
+          </p>
+          <div class="lijn2"> </div>
+      </section>
+    <% } %>
+  <% } %>
+
+<% include footer %>

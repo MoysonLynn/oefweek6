@@ -1,0 +1,46 @@
+<% include header %>
+<% include nav %>
+<h1>M HKA </h1></div>
+  <div class="lijn1">
+<nav>
+  <% for (var i = 0; i < categorieen.length; i++) { %>
+    <div class="kader">  <a href="/categorieen/<%- i %>"><%- categorieen[i] %></a>  </div>
+  <% } %>
+</nav>
+
+
+
+  <% var teller = 1; %>
+  <% museum.forEach(function(item){ %>
+    <section>
+
+        <h2>
+          <a class="titels"href=/items/<%- item.id %>><%- item.titel %></a>
+        </h2>
+
+
+        <img class="afbeten"src="/img/<%- item.afbeeldings %>" alt="<%- item.titel %>">
+        <p class="datum"><%- item.datum %></p>
+        <p>
+          <%- item.samenvatting %>
+        </p>
+        <div class="lijn2"> </div>
+
+    </section>
+    <% teller++;}); %>
+
+
+<% include footer %>
+<br>  <div class="lijn2"> </div>
+<div id="disqus_thread"></div>
+<script>
+
+
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://oefweek6-1.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
